@@ -1,0 +1,210 @@
+:root {
+    --primary: #4294E3;
+    --secondary: #8F12FD;
+    --light: #F0F6FF;
+    --dark: #262B47;
+    --sui : #3448bd;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url(../asset/bg-robot2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+.container {
+    position: relative;
+    max-width: 460px;
+    width: 100%;
+    margin: auto;
+    bottom: 0;
+    border-radius: 20px
+}
+
+.card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 40px 40px 40px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 0.3s ease;
+    margin-top: 15%;
+}
+
+.card .title {
+    position: relative;
+    margin: 0 0 35px;
+    padding: 10px 0 10px 0px;
+    color: #2593ed;
+    font-size: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card .input-container {
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.input-container.bot {
+    margin-bottom: 5em;
+}
+
+.card .input-container input {
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    color: #212121;
+    font-size: 24px;
+    font-weight: 400;
+}
+  
+.card .input-container input:focus ~ label {
+    color: #9d9d9d;
+    transform: translate(-5%, -50%) scale(0.90);
+}
+
+.card .input-container input:focus ~ .bar:before, .card .input-container input:focus ~ .bar:after {
+    width: 50%;
+}
+  .card .input-container input:valid ~ label {
+    color: #9d9d9d;
+    transform: translate(-5%, -50%) scale(0.90);
+}
+
+.card .input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #757575;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 60px;
+    transition: 0.2s ease;
+}
+
+.card .input-container .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #757575;
+    width: 100%;
+    height: 1px;
+}
+
+.card .input-container .bar:before, .card .input-container .bar:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    width: 0;
+    height: 2px;
+    transition: 0.2s ease;
+}
+
+.card .input-container .bar:before {
+    left: 50%;
+}
+
+.card .input-container .bar:after {
+    right: 50%;
+}
+
+.card .button-container {
+    margin: 0 60px;
+    text-align: center;
+}
+
+.card .button-container button {
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background: 0;
+    width: 240px;
+    border: 2px solid rgb(65, 61, 61);
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.card .button-container button span {
+    position: relative;
+    z-index: 1;
+    color: rgb(65, 61, 61);
+    transition: 0.3s ease;
+}
+
+.card .button-container button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.card .button-container button:hover, .card .button-container button:active, .card .button-container button:focus {
+    /* border-color: #2593ed; */
+    border-color: var(--primary);
+  }
+  .card .button-container button:hover span, .card .button-container button:active span, .card .button-container button:focus span {
+    /* color: #2593ed; */
+    color: var(--primary);
+
+  }
+  .card .button-container button:active span, .card .button-container button:focus span {
+    color: #ffffff;
+  }
+  .card .button-container button:active:before, .card .button-container button:focus:before {
+    opacity: 1;
+    transform: scale(10);
+  }
+
+
+@media screen and (max-width:768px) {
+    body {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+
+    }
+}
+
+@media screen and (max-width:564px) {
+    .card .button-container {
+        margin: 0;
+    }
+
+    .card .button-container button {
+        width: 180px;
+    }
+}
